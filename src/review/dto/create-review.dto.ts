@@ -1,4 +1,4 @@
-import {IsNumber, IsString, Max, Min} from 'class-validator';
+import { IsNumber, IsString, Max, Min } from 'class-validator';
 
 export class CreateReviewDto {
 	@IsString()
@@ -11,9 +11,7 @@ export class CreateReviewDto {
 	description: string;
 
 	@Max(5)
-	@Min(1, {
-		message: 'Rating must be between 1 and 5'
-	})
+	@Min(1, { message: 'Рейтинг не может быть менее 1' })
 	@IsNumber()
 	rating: number;
 

@@ -1,12 +1,12 @@
-import {Test, TestingModule} from '@nestjs/testing';
-import {ReviewService} from './review.service';
-import {getModelToken} from 'nestjs-typegoose';
-import {Types} from 'mongoose';
+import { Test, TestingModule } from '@nestjs/testing';
+import { Types } from 'mongoose';
+import { getModelToken } from 'nestjs-typegoose';
+import { ReviewService } from './review.service';
 
 describe('ReviewService', () => {
 	let service: ReviewService;
 
-	const exec = {exec: jest.fn()};
+	const exec = { exec: jest.fn() };
 	const reviewRepositoryFactory = () => ({
 		find: () => exec
 	});
@@ -15,7 +15,7 @@ describe('ReviewService', () => {
 		const module: TestingModule = await Test.createTestingModule({
 			providers: [
 				ReviewService,
-				{useFactory: reviewRepositoryFactory, provide: getModelToken('ReviewModel')}
+				{ useFactory: reviewRepositoryFactory, provide: getModelToken('ReviewModel') }
 			],
 		}).compile();
 
@@ -25,9 +25,10 @@ describe('ReviewService', () => {
 	it('should be defined', () => {
 		expect(service).toBeDefined();
 	});
+
 	it('findByProductId working', async () => {
-		const id = new Types.ObjectId().toString();
-		reviewRepositoryFactory().find().exec.mockReturnValueOnce([{productId: id}]);
+		const id = new Types.ObjectId().toHexString();
+		reviewRepositoryFactory().find().exec.mockReturnValueOnce([{ productId: id }]);
 		const res = await service.findByProductId(id);
 		expect(res[0].productId).toBe(id);
 	});

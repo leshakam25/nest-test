@@ -1,10 +1,7 @@
-import {TimeStamps} from '@typegoose/typegoose/lib/defaultClasses';
-import {prop} from '@typegoose/typegoose';
-import {ProductCharacteristics} from '../product.model';
-import {IsArray, IsNumber, IsOptional, IsString, ValidateNested} from 'class-validator';
-import {Type} from 'class-transformer';
+import { Type } from 'class-transformer';
+import { IsNumber, IsString, IsOptional, ValidateNested, IsArray } from 'class-validator';
 
-export class ProductCharacteristicDto {
+class ProductCharacteristicDto {
 	@IsString()
 	name: string;
 
@@ -13,7 +10,6 @@ export class ProductCharacteristicDto {
 }
 
 export class CreateProductDto {
-
 	@IsString()
 	image: string;
 
@@ -25,13 +21,10 @@ export class CreateProductDto {
 
 	@IsOptional()
 	@IsNumber()
-	oldPrice: number;
+	oldPrice?: number;
 
 	@IsNumber()
 	credit: number;
-
-	@IsNumber()
-	calculatedRating: number;
 
 	@IsString()
 	description: string;
@@ -43,11 +36,11 @@ export class CreateProductDto {
 	disAdvantages: string;
 
 	@IsArray()
-	@IsString({each: true})
+	@IsString({ each: true })
 	categories: string[];
 
 	@IsArray()
-	@IsString({each: true})
+	@IsString({ each: true })
 	tags: string[];
 
 	@IsArray()
@@ -55,3 +48,4 @@ export class CreateProductDto {
 	@Type(() => ProductCharacteristicDto)
 	characteristics: ProductCharacteristicDto[];
 }
+
