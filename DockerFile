@@ -4,5 +4,5 @@ ADD package.json package.json
 RUN npm install
 ADD . .
 RUN npm run build
-RIN npm prune --production #Чистит все зависимости кроме продакшн
+RUN npm prune --production #Чистит все зависимости кроме продакшн
 CMD ["node","./dist/main.js"]
