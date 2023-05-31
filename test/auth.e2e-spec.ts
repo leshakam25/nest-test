@@ -1,15 +1,14 @@
-import {Test, TestingModule} from '@nestjs/testing';
-import {INestApplication} from '@nestjs/common';
-import {AppModule} from '../src/app.module';
-import {CreateReviewDto} from '../src/review/dto/create-review.dto';
-import {disconnect, Types} from 'mongoose';
+import { Test, TestingModule } from '@nestjs/testing';
+import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import {REVIEW_NOT_FOUND} from '../src/review/review.constants';
-import {AuthDto} from '../src/auth/dto/auth.dto';
+import { AppModule } from './../src/app.module';
+import { disconnect } from 'mongoose';
+import { AuthDto } from 'src/auth/dto/auth.dto';
 
-
-const loginDto: AuthDto = {login: 'test@test.test', password: 'testpass'};
-
+const loginDto: AuthDto = {
+	login: 'a@a.ru',
+	password: '1'
+};
 
 describe('AuthController (e2e)', () => {
 	let app: INestApplication;
@@ -30,32 +29,31 @@ describe('AuthController (e2e)', () => {
 			.post('/auth/login')
 			.send(loginDto)
 			.expect(200)
-			.then(({body}: request.Response) => {
+			.then(({ body }: request.Response) => {
 				expect(body.access_token).toBeDefined();
 				done();
 			});
-
 	});
 
-	it('/auth/login (POST) - fail password', async () => {
+	it('/auth/login (POST) - fail password', () => {
 		return request(app.getHttpServer())
 			.post('/auth/login')
-			.send({...loginDto, password: '2'})
+			.send({ ...loginDto, password: '2' })
 			.expect(401, {
 				statusCode: 401,
-				error: 'Unauthorized',
-				message: 'WRONG PASSWORD'
+				message: "Неверный пароль",
+				error: "Unauthorized"
 			});
 	});
 
-	it('/auth/login (POST) - fail login', async () => {
+	it('/auth/login (POST) - fail password', () => {
 		return request(app.getHttpServer())
 			.post('/auth/login')
-			.send({...loginDto, login: 'aaa'})
+			.send({ ...loginDto, login: 'aaa@a.ru' })
 			.expect(401, {
 				statusCode: 401,
-				error: 'Unauthorized',
-				message: 'USER NOT FOUND'
+				message: "Пользователь с таким email не найден",
+				error: "Unauthorized"
 			});
 	});
 
