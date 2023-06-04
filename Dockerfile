@@ -1,5 +1,5 @@
 FROM node:14-alpine
-WORKDIR /opt/app
+WORKDIR /opt/docker
 ADD package.json package.json
 RUN npm install
 ADD . .
