@@ -5,6 +5,6 @@ services:
     container_name: nest-test
     restart: always
     ports:
-      - 3000:3000
+      - "3000:3000"
     volumes:
       - ./.env:/home/server/docker/app/.env
