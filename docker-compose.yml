@@ -7,4 +7,4 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./.env:/home/server/docker/app/.env
+      - ./.env:/home/server/docker/apps/app/.env
