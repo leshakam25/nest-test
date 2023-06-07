@@ -15,5 +15,5 @@ jobs:
           registry: docker.pkg.github.com
           name: docker.pkg.github.com/leshakam25/nest-test
           username: leshakam25
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: 123
           tags: "develop"
