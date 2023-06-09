@@ -1,0 +1,19 @@
+Index: .github/workflows/main.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># This workflow uses actions that are not certified by GitHub.\r\n# They are provided by a third-party and are governed by\r\n# separate terms of service, privacy policy, and support\r\n# documentation.\r\n\r\n# GitHub recommends pinning actions to a commit SHA.\r\n# To get a newer version, you will need to update the SHA.\r\n# You can also reference a tag or branch, but the action may change without warning.\r\n\r\nname: Publish Docker images\r\n\r\non:\r\n  release:\r\n    types: [published]\r\n\r\njobs:\r\n  push_to_registry:\r\n    name: Push Docker image to Docker Hub\r\n    runs-on: ubuntu-latest\r\n    steps:\r\n      - name: Check out the repo\r\n        uses: actions/checkout@v3\r\n\r\n      - name: Log in to Docker Hub\r\n        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a\r\n        with:\r\n          username: ${{ secrets.DOCKER_USERNAME }}\r\n          password: ${{ secrets.DOCKER_PASSWORD }}\r\n\r\n      - name: Extract metadata (tags, labels) for Docker\r\n        id: meta\r\n        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7\r\n        with:\r\n          images: lyo25/nest-test2\r\n\r\n      - name: Build and push Docker image\r\n        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671\r\n        with:\r\n          context: .\r\n          file: ./Dockerfile\r\n          push: true\r\n          tags: ${{ steps.meta.outputs.tags }}\r\n          labels: ${{ steps.meta.outputs.labels }}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+--- a/.github/workflows/main.yml	(revision db61c11a9c811bd22d32fe2617bd7e3d72213bf1)
++++ b/.github/workflows/main.yml	(date 1686228736425)
+@@ -15,7 +15,7 @@
+ 
+ jobs:
+   push_to_registry:
+-    name: Push Docker image to Docker Hub
++    name: Push Docker image to Docker Hu
+     runs-on: ubuntu-latest
+     steps:
+       - name: Check out the repo
