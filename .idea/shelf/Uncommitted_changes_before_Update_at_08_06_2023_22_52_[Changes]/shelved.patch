@@ -1,0 +1,20 @@
+Index: .github/workflows/main.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>name: Publish Docker\r\n\r\non:\r\n  push:\r\n    branches: [ master ]\r\n\r\njobs:\r\n  build:\r\n    runs-on: ubuntu-latest\r\n    steps:\r\n      - uses: actions/checkout@v3\r\n\r\n      - name: Publish to registy\r\n        uses: elgohr/Publish-Docker-Github-Action@v5\r\n        with:\r\n          registry: docker.pkg.github.com\r\n          name: docker.pkg.github.com/lyo25/nest-test2/latest\r\n          username: ${{ secrets.DOCKER_USERNAME }}\r\n          password: ${{ secrets.DOCKER_PASSWORD }}\r\n          tags: \"latest\"
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+--- a/.github/workflows/main.yml	(revision 461d5ec3a520794b3639b63ff7b1d43a2a7f7451)
++++ b/.github/workflows/main.yml	(date 1686169496745)
+@@ -14,7 +14,7 @@
+         uses: elgohr/Publish-Docker-Github-Action@v5
+         with:
+           registry: docker.pkg.github.com
+-          name: docker.pkg.github.com/lyo25/nest-test2/latest
++          name: docker.pkg.github.com/lyo25/nest-test/latest
+           username: ${{ secrets.DOCKER_USERNAME }}
+           password: ${{ secrets.DOCKER_PASSWORD }}
+           tags: "latest"
+\ No newline at end of file

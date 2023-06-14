@@ -1,0 +1,10 @@
+version: '3'
+services:
+  top.api:
+    image: lyo25/nest-test2:latest
+    container_name: nest-test
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./.env:/home/server/docker/apps/app/.env
