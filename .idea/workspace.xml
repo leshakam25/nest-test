@@ -56,7 +56,7 @@
       <recent name="C:\Projects\test\nest-test\.github" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start:dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="AppController (e2e)./review/:id (DELETE) - success" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
@@ -102,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start:dev" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.start:dev" />
         <item itemvalue="npm.start:debug" />
         <item itemvalue="Jest.AppController (e2e)./review/:id (DELETE) - success" />
       </list>
