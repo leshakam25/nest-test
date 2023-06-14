@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bb1c6d-48a9-4038-9767-8f94c185dbdc" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src.7z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +56,7 @@
       <recent name="C:\Projects\test\nest-test\.github" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.start:dev">
     <configuration name="AppController (e2e)./review/:id (DELETE) - success" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
@@ -101,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start:dev" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.start:debug" />
         <item itemvalue="Jest.AppController (e2e)./review/:id (DELETE) - success" />
       </list>
@@ -149,7 +150,8 @@
       <workItem from="1686227815825" duration="1647000" />
       <workItem from="1686303259662" duration="838000" />
       <workItem from="1686643270954" duration="98000" />
-      <workItem from="1686644196260" duration="502000" />
+      <workItem from="1686644196260" duration="1246000" />
+      <workItem from="1686730582574" duration="1682000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1684760888412</created>
@@ -305,7 +307,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686644607969</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="init">
+      <created>1686644845595</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1686644845595</updated>
+    </task>
+    <task id="LOCAL-00024" summary="init">
+      <created>1686645199129</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1686645199129</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
