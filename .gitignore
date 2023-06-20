@@ -1,7 +1,7 @@
-/dist
-/node_modules
-/.idea/
+dist
+node_modules
+.idea
 .env
-/upload
+upload
 .DS_Store
 __MACOSX
