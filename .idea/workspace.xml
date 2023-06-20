@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bb1c6d-48a9-4038-9767-8f94c185dbdc" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/files/dto/file-element.reposonse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/mfile.class.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/files/files.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/files.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/files/files.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/files.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/files/files.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/files.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/top-page/top-page.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/top-page/top-page.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +158,7 @@
       <workItem from="1687165631918" duration="599000" />
       <workItem from="1687248796243" duration="1834000" />
       <workItem from="1687250649165" duration="4878000" />
+      <workItem from="1687266335444" duration="881000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1684760888412</created>
