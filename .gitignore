@@ -1,7 +1,7 @@
 dist
 node_modules
-.idea
-.env
-upload
-.DS_Store
+uploads
 __MACOSX
+.idea
+.DS_Store
+.env
