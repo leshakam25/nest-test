@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1bb1c6d-48a9-4038-9767-8f94c185dbdc" name="Changes" comment="init" />
+    <list default="true" id="f1bb1c6d-48a9-4038-9767-8f94c185dbdc" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/sitemap/sitemap.constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sitemap/sitemap.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/sitemap/sitemap.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sitemap/sitemap.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/sitemap/sitemap.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/top-page/top-page.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/top-page/top-page.module.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,6 +163,7 @@
       <workItem from="1687248796243" duration="1834000" />
       <workItem from="1687250649165" duration="4878000" />
       <workItem from="1687266335444" duration="1554000" />
+      <workItem from="1687334404818" duration="4794000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1684760888412</created>
