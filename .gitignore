@@ -2,7 +2,7 @@ dist
 node_modules
 uploads
 __MACOSX
-.idea
 .DS_Store
 .env
+.idea
 .idea/workspace.xml
