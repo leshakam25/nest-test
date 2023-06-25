@@ -11,20 +11,30 @@ import {
 	UsePipes,
 	ValidationPipe
 } from '@nestjs/common';
-import { IdValidationPipe } from 'src/pipes/ad-validation.pipe';
-import { JwtAuthGuard } from '../auth/guards/jwt.guard';
-import { CreateReviewDto } from './dto/create-review.dto';
-import { REVIEW_NOT_FOUND } from './review.constants';
-import { ReviewService } from './review.service';
+import {IdValidationPipe} from 'src/pipes/ad-validation.pipe';
+import {JwtAuthGuard} from '../auth/guards/jwt.guard';
+import {CreateReviewDto} from './dto/create-review.dto';
+import {REVIEW_NOT_FOUND} from './review.constants';
+import {ReviewService} from './review.service';
+import {TelegramService} from '../telegram/telegram.service';
 
 @Controller('review')
 export class ReviewController {
-	constructor(private readonly reviewService: ReviewService) { }
+	constructor(
+		private readonly reviewService: ReviewService,
+		private readonly telegramService: TelegramService
+	) {
+	}
 
 	@UsePipes(new ValidationPipe())
-	@Post('create')
+	@Post('notify')
 	async create(@Body() dto: CreateReviewDto) {
-		return this.reviewService.create(dto);
+		const message = `Name: ${dto.name}\n`
+			+ `Title: ${dto.title}\n`
+			+ `Description:${dto.description}\n`
+			+ `Rate:${dto.rating}\n`
+			+ `ID:${dto.productId}`;
+		return this.telegramService.sendMessage(message);
 	}
 
 	@UseGuards(JwtAuthGuard)
