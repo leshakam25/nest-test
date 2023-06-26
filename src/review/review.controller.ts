@@ -11,29 +11,34 @@ import {
 	UsePipes,
 	ValidationPipe
 } from '@nestjs/common';
-import {IdValidationPipe} from 'src/pipes/ad-validation.pipe';
-import {JwtAuthGuard} from '../auth/guards/jwt.guard';
-import {CreateReviewDto} from './dto/create-review.dto';
-import {REVIEW_NOT_FOUND} from './review.constants';
-import {ReviewService} from './review.service';
-import {TelegramService} from '../telegram/telegram.service';
+import { IdValidationPipe } from 'src/pipes/ad-validation.pipe';
+import { TelegramService } from 'src/telegram/telegram.service';
+import { JwtAuthGuard } from '../auth/guards/jwt.guard';
+import { CreateReviewDto } from './dto/create-review.dto';
+import { REVIEW_NOT_FOUND } from './review.constants';
+import { ReviewService } from './review.service';
 
 @Controller('review')
 export class ReviewController {
 	constructor(
 		private readonly reviewService: ReviewService,
 		private readonly telegramService: TelegramService
-	) {
+	) { }
+
+	@UsePipes(new ValidationPipe())
+	@Post('create')
+	async create(@Body() dto: CreateReviewDto) {
+		return this.reviewService.create(dto);
 	}
 
 	@UsePipes(new ValidationPipe())
 	@Post('notify')
-	async create(@Body() dto: CreateReviewDto) {
-		const message = `Name: ${dto.name}\n`
-			+ `Title: ${dto.title}\n`
-			+ `Description:${dto.description}\n`
-			+ `Rate:${dto.rating}\n`
-			+ `ID:${dto.productId}`;
+	async notify(@Body() dto: CreateReviewDto) {
+		const message = `Имя: ${dto.name}\n`
+			+ `Заголовок: ${dto.title}\n`
+			+ `Описание: ${dto.description}\n`
+			+ `Рейтинг: ${dto.rating}\n`
+			+ `ID Продукта: ${dto.productId}`;
 		return this.telegramService.sendMessage(message);
 	}
 

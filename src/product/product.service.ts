@@ -1,17 +1,14 @@
-import {Injectable} from '@nestjs/common';
-import {ModelType} from '@typegoose/typegoose/lib/types';
-import {InjectModel} from 'nestjs-typegoose';
-import {ReviewModel} from 'src/review/review.model';
-import {CreateProductDto} from './dto/create-product.dto';
-import {FindProductDto} from './dto/find-product.dto';
-import {ProductModel} from './product.model';
-
+import { Injectable } from '@nestjs/common';
+import { ModelType } from '@typegoose/typegoose/lib/types';
+import { InjectModel } from 'nestjs-typegoose';
+import { ReviewModel } from 'src/review/review.model';
+import { CreateProductDto } from './dto/create-product.dto';
+import { FindProductDto } from './dto/find-product.dto';
+import { ProductModel } from './product.model';
 
 @Injectable()
 export class ProductService {
-	constructor(@InjectModel(ProductModel) private readonly productModel: ModelType<ProductModel>) {
-	}
-
+	constructor(@InjectModel(ProductModel) private readonly productModel: ModelType<ProductModel>) { }
 
 	async create(dto: CreateProductDto) {
 		return this.productModel.create(dto);
@@ -26,7 +23,7 @@ export class ProductService {
 	}
 
 	async updateById(id: string, dto: CreateProductDto) {
-		return this.productModel.findByIdAndUpdate(id, dto, {new: true}).exec();
+		return this.productModel.findByIdAndUpdate(id, dto, { new: true }).exec();
 	}
 
 	async findWithReviews(dto: FindProductDto) {
@@ -54,8 +51,8 @@ export class ProductService {
 			},
 			{
 				$addFields: {
-					reviewCount: {$size: '$reviews'},
-					reviewAvg: {$avg: '$reviews.rating'},
+					reviewCount: { $size: '$reviews' },
+					reviewAvg: { $avg: '$reviews.rating' },
 					reviews: {
 						$function: {
 							body: `function (reviews) {
